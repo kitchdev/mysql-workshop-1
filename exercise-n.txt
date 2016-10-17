@@ -32,3 +32,49 @@ initiated mysql
 | phpmyadmin            |
 +-----------------------+
 6 rows in set (0.00 sec)
+
+
+mysql> CREATE TABLE Account(first_name varchar(30), last_name varchar(30));
+Query OK, 0 rows affected (0.02 sec)
+
+mysql> CREATE TABLE AddressBook(first_name varchar(30), last_name varchar(30), phone_number number);
+
+mysql> CREATE TABLE Entry(entry varchar(30));
+Query OK, 0 rows affected (0.01 sec)
+
+mysql> CREATE TABLE Test(test blob);
+Query OK, 0 rows affected (0.01 sec)
+
+mysql> DROP TABLE Test;
+Query OK, 0 rows affected (0.02 sec)
+
+mysql> show tables;
++---------------------------------+
+| Tables_in_decodemtl_addressbook |
++---------------------------------+
+| Account                         |
+| AddressBook                     |
+| Entry                           |
++---------------------------------+
+3 rows in set (0.00 sec)
+
+
+mysql> ALTER TABLE Account ADD id int AUTO_INCREMENT PRIMARY KEY;
+Query OK, 0 rows affected (0.03 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> ALTER TABLE AddressBook ADD id int AUTO_INCREMENT PRIMARY KEY;
+Query OK, 0 rows affected (0.07 sec)
+
+mysql> ALTER TABLE Entry ADD id int AUTO_INCREMENT PRIMARY KEY;
+Query OK, 0 rows affected (0.06 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> ALTER TABLE Entry ADD type ENUM('home', 'work', 'other');
+Query OK, 0 rows affected (0.07 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> ALTER TABLE Entry
+    -> ADD subtype ENUM('phone','address','email');
+Query OK, 0 rows affected (0.03 sec)
+Records: 0  Duplicates: 0  Warnings: 0
