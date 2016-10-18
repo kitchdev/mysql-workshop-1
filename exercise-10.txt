@@ -1,0 +1,67 @@
+mysql> CREATE TABLE hotelrooms(
+    -> room_number int auto_increment,
+    -> total_rooms int,
+    -> total_floors int,
+    -> PRIMARY KEY (room_number)
+    -> );
+Query OK, 0 rows affected (0.01 sec)
+
+mysql> describe hotelrooms
+    -> ;
++--------------+---------+------+-----+---------+----------------+
+| Field        | Type    | Null | Key | Default | Extra          |
++--------------+---------+------+-----+---------+----------------+
+| room_number  | int(11) | NO   | PRI | NULL    | auto_increment |
+| total_rooms  | int(11) | YES  |     | NULL    |                |
+| total_floors | int(11) | YES  |     | NULL    |                |
++--------------+---------+------+-----+---------+----------------+
+3 rows in set (0.00 sec)
+
+mysql> CREATE TABLE hotel_by_floor(
+    -> rooms_occupied int,
+    -> when_occupiedIsFree DATETIME,
+    -> rooms_vacant int,
+    -> rentable_rooms int,
+    -> unrentable_rooms int,
+    -> PRIMARY KEY(when_occupiedIsFree));
+Query OK, 0 rows affected (0.01 sec)
+
+mysql> describe hotel_by_floor
+    -> ;
++---------------------+----------+------+-----+---------------------+-------+
+| Field               | Type     | Null | Key | Default             | Extra |
++---------------------+----------+------+-----+---------------------+-------+
+| rooms_occupied      | int(11)  | YES  |     | NULL                |       |
+| when_occupiedIsFree | datetime | NO   | PRI | 0000-00-00 00:00:00 |       |
+| rooms_vacant        | int(11)  | YES  |     | NULL                |       |
+| rentable_rooms      | int(11)  | YES  |     | NULL                |       |
+| unrentable_rooms    | int(11)  | YES  |     | NULL                |       |
++---------------------+----------+------+-----+---------------------+-------+
+5 rows in set (0.00 sec)
+
+
+mysql> CREATE TABLE entry(
+    -> registreeID varChar(30),
+    -> first_name varChar(30),
+    -> last_name varChar(30),
+    -> phone_number int,
+    -> email varchar(30),
+    -> reservation_date DATETIME,
+    -> reservation_details blob
+    -> );
+Query OK, 0 rows affected (0.02 sec)
+
+mysql> describe entry
+    -> ;
++---------------------+-------------+------+-----+---------+-------+
+| Field               | Type        | Null | Key | Default | Extra |
++---------------------+-------------+------+-----+---------+-------+
+| registreeID         | varchar(30) | YES  |     | NULL    |       |
+| first_name          | varchar(30) | YES  |     | NULL    |       |
+| last_name           | varchar(30) | YES  |     | NULL    |       |
+| phone_number        | int(11)     | YES  |     | NULL    |       |
+| email               | varchar(30) | YES  |     | NULL    |       |
+| reservation_date    | datetime    | YES  |     | NULL    |       |
+| reservation_details | blob        | YES  |     | NULL    |       |
++---------------------+-------------+------+-----+---------+-------+
+7 rows in set (0.01 sec)
