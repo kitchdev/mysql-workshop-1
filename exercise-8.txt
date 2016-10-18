@@ -1,0 +1,72 @@
+mysql> create table Account(
+    -> ID int auto_increment primary key,
+    -> email varChar(255),
+    -> password varChar(40),
+    -> createdOn datetime,
+    -> modifiedOn datetime
+    -> );
+Query OK, 0 rows affected (0.01 sec)
+mysql> describe Account;
++------------+--------------+------+-----+---------+----------------+
+| Field      | Type         | Null | Key | Default | Extra          |
++------------+--------------+------+-----+---------+----------------+
+| ID         | int(11)      | NO   | PRI | NULL    | auto_increment |
+| email      | varchar(255) | YES  |     | NULL    |                |
+| password   | varchar(40)  | YES  |     | NULL    |                |
+| createdOn  | datetime     | YES  |     | NULL    |                |
+| modifiedOn | datetime     | YES  |     | NULL    |                |
++------------+--------------+------+-----+---------+----------------+
+5 rows in set (0.00 sec)
+
+mysql> CREATE Table AddressBook(
+    -> ID int auto_increment primary key,
+    -> accountID int,
+    -> name varchar(255),
+    -> createdOn Datetime,
+    -> modifiedOn datetime
+    -> );
+Query OK, 0 rows affected (0.01 sec)
+mysql> describe AddressBook;
++------------+--------------+------+-----+---------+----------------+
+| Field      | Type         | Null | Key | Default | Extra          |
++------------+--------------+------+-----+---------+----------------+
+| ID         | int(11)      | NO   | PRI | NULL    | auto_increment |
+| accountID  | int(11)      | YES  |     | NULL    |                |
+| name       | varchar(255) | YES  |     | NULL    |                |
+| createdOn  | datetime     | YES  |     | NULL    |                |
+| modifiedOn | datetime     | YES  |     | NULL    |                |
++------------+--------------+------+-----+---------+----------------+
+5 rows in set (0.01 sec)
+
+mysql> CREATE TABLE entry(
+    -> ID int auto_increment primary key,
+    -> addressBookId int,
+    -> first_name varChar(30),
+    -> last_name varChar(30),
+    -> birthday datetime,
+    -> type Enum('home', 'work', 'other'),
+    -> subtype Enum('phone','address','email'),
+    -> contentLineOne varchar(255),
+    -> contentLineTwo varChar(255),
+    -> contentLineThree varchar(255),
+    -> contentLineFour varchar(255)
+    -> );
+Query OK, 0 rows affected (0.01 sec)
+
+mysql> describe entry;
++------------------+---------------------------------+------+-----+---------+----------------+
+| Field            | Type                            | Null | Key | Default | Extra          |
++------------------+---------------------------------+------+-----+---------+----------------+
+| ID               | int(11)                         | NO   | PRI | NULL    | auto_increment |
+| addressBookId    | int(11)                         | YES  |     | NULL    |                |
+| first_name       | varchar(30)                     | YES  |     | NULL    |                |
+| last_name        | varchar(30)                     | YES  |     | NULL    |                |
+| birthday         | datetime                        | YES  |     | NULL    |                |
+| type             | enum('home','work','other')     | YES  |     | NULL    |                |
+| subtype          | enum('phone','address','email') | YES  |     | NULL    |                |
+| contentLineOne   | varchar(255)                    | YES  |     | NULL    |                |
+| contentLineTwo   | varchar(255)                    | YES  |     | NULL    |                |
+| contentLineThree | varchar(255)                    | YES  |     | NULL    |                |
+| contentLineFour  | varchar(255)                    | YES  |     | NULL    |                |
++------------------+---------------------------------+------+-----+---------+----------------+
+11 rows in set (0.00 sec)
