@@ -1,0 +1,6 @@
+ create database decodemtl_test;
+ Query OK, 1 row affected (0.00 sec)
+ 
+ 
+ create database decodemtl_addressbook;
+ Query OK, 1 row affected (0.00 sec)
