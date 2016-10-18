@@ -1,0 +1,2 @@
+ mysql -u kitchdev
+ logged into mysql;
