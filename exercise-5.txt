@@ -1,0 +1,13 @@
+mysql> CREATE TABLE Account(first_name varchar(30), last_name varchar(30));
+Query OK, 0 rows affected (0.02 sec)
+
+mysql> CREATE TABLE AddressBook(first_name varchar(30), last_name varchar(30), phone_number number);
+
+mysql> CREATE TABLE Entry(entry varchar(30));
+Query OK, 0 rows affected (0.01 sec)
+
+mysql> CREATE TABLE Test(test blob);
+Query OK, 0 rows affected (0.01 sec)
+
+mysql> DROP TABLE Test;
+Query OK, 0 rows affected (0.02 sec)
